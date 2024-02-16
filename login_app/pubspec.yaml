@@ -21,9 +21,14 @@ dev_dependencies:
 
 flutter_native_splash:
   color: "#f7f6f1"
-  dark_color: "#272727"
-  image: assets/images/burger-logo.png
-  dark_image: assets/images/burger-logo.png
+  color_dark: "#272727"
+  image_dark: assets/images/pinguim.jpg
+
+  android_12:
+    image: assets/images/pinguim.jpg
+    icon_background_color: "#f7f6f1"
+    image_dark: assets/images/pinguim.jpg
+    icon_background_color_dark: "#272727"
 
 flutter:
   uses-material-design: true
