@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:login_app/src/constants/colors.dart';
 import 'package:login_app/src/constants/image_strings.dart';
 import 'package:login_app/src/constants/text_strings.dart';
+import 'package:login_app/src/features/authtentication/screens/on_boarding/on_boarding.dart';
+import 'package:login_app/src/features/authtentication/screens/welcome/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -66,16 +68,16 @@ class _SplashScreenState extends State<SplashScreen> {
               bottom: animate ? 40 : -40,
               right: 10,
               child: AnimatedOpacity(
-                opacity: animate ? 1 : 0,
-                duration: const Duration(milliseconds: 1300),
-                child:Container(
-                width: 30,
-                height: 30,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: tPrimaryColor,
-                ),
-              ))),
+                  opacity: animate ? 1 : 0,
+                  duration: const Duration(milliseconds: 1300),
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      color: tPrimaryColor,
+                    ),
+                  ))),
         ],
       ),
     );
@@ -84,7 +86,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Future startAnimation() async {
     await Future.delayed(Duration(milliseconds: 500));
     setState(() => animate = true);
-    await Future.delayed(Duration(microseconds: 5000));
-    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Welcome))
+    await Future.delayed(Duration(milliseconds: 5000));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => OnBoardingScreen()));
   }
 }
